@@ -1,0 +1,230 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "QRCode Estático",
+    "version": "unknown"
+  },
+  "servers": [
+    {
+      "url": "https://api.iugu.com/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "sec0": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "api_token"
+      }
+    }
+  },
+  "security": [
+    {
+      "sec0": []
+    }
+  ],
+  "paths": {
+    "/static_qr_codes": {
+      "get": {
+        "summary": "Listagem QRCode Estático",
+        "description": "Retorna lista de QRCode Estático",
+        "operationId": "listagem-qrcode-estatico",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "integer",
+                    "description": "Indica quantos registros pular do início da pesquisa, usado para paginação.",
+                    "format": "int32"
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "description": "Limita o número de registros retornados em até 100, que é o padrão de retorno desta chamada. Também utilizado em paginação.",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"items\": [\n    {\n      \"qr_code_id\": \"055960038F4C4FD38913C29CA6BF1072\",\n      \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo62250521A5nyprE3ocnbnbhxwj11O6304EA9C\",\n      \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n      \"qr_code_amount_cents\": null,\n      \"qr_code\": \"https://faturas.iugu.com/static_qr_code/055960038F4C4FD38913C29CA6BF1072\",\n      \"qr_code_description\": null\n    },\n    {\n      \"qr_code_id\": \"8B7B1EDB4E0C47C1ACBD1813481E7441\",\n      \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo622605224FCCNcHVa8xpDOv4nD955F6304E3B2\",\n      \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n      \"qr_code_amount_cents\": null,\n      \"qr_code\": \"https://faturas.iugu.com/static_qr_code/8B7B1EDB4E0C47C1ACBD1813481E7441\",\n      \"qr_code_description\": null\n    },\n    {\n      \"qr_code_id\": \"70A7749411DC4E1FB4A4E63AD106FBE7\",\n      \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd0007752040000530398654072324.675802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo622605223QZfPaU3pclYus3TPYnwJj63043AA4\",\n      \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n      \"qr_code_amount_cents\": 232467,\n      \"qr_code\": \"https://faturas.iugu.com/static_qr_code/70A7749411DC4E1FB4A4E63AD106FBE7\",\n      \"qr_code_description\": \"wd\"\n    },\n    {\n      \"qr_code_id\": \"6954E669CB4C41F58BCCD6D2B5A96ED7\",\n      \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd00077520400005303986540512.135802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo622605223Ckzc2C2t2gtB7S9q5VUsp630497C2\",\n      \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n      \"qr_code_amount_cents\": 1213,\n      \"qr_code\": \"https://faturas.iugu.com/static_qr_code/6954E669CB4C41F58BCCD6D2B5A96ED7\",\n      \"qr_code_description\": \"qwq\"\n    },\n    {\n      \"qr_code_id\": \"D6670DE52F414DF2AD25F81F80CF7DCC\",\n      \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo622605226WZS8pvqVKiPrjMqoHJkzM6304671F\",\n      \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n      \"qr_code_amount_cents\": null,\n      \"qr_code\": \"https://faturas.iugu.com/static_qr_code/D6670DE52F414DF2AD25F81F80CF7DCC\",\n      \"qr_code_description\": null\n    }\n  ],\n  \"totalItems\": 5\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "qr_code_id": {
+                            "type": "string",
+                            "example": "055960038F4C4FD38913C29CA6BF1072"
+                          },
+                          "qr_code_payload": {
+                            "type": "string",
+                            "example": "00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo62250521A5nyprE3ocnbnbhxwj11O6304EA9C"
+                          },
+                          "qr_code_pix_key": {
+                            "type": "string",
+                            "example": "7514dfb7-d01d-40d6-9175-f5f16dd00077"
+                          },
+                          "qr_code_amount_cents": {},
+                          "qr_code": {
+                            "type": "string",
+                            "example": "https://faturas.iugu.com/static_qr_code/055960038F4C4FD38913C29CA6BF1072"
+                          },
+                          "qr_code_description": {}
+                        }
+                      }
+                    },
+                    "totalItems": {
+                      "type": "integer",
+                      "example": 5,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/static_qr_codes/": {
+      "post": {
+        "summary": "Criação QRCode Estático",
+        "description": "Criação de QRCode Estático",
+        "operationId": "criação-qrcode-estático",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount_cents": {
+                    "type": "string",
+                    "description": "Valor do QR Code em centavos. Caso não seja informado um é criado um QR Code que o cliente final pode escolher qual valor seja pago."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Opcional com até 25 carácteres."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"qr_code_id\": \"055960038F4C4FD38913C29CA6BF1072\",\n  \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo62250521A5nyprE3ocnbnbhxwj11O6304EA9C\",\n  \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n  \"qr_code_amount_cents\": null,\n  \"qr_code\": \"https://faturas.iugu.com/static_qr_code/055960038F4C4FD38913C29CA6BF1072\",\n  \"qr_code_description\": null\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qr_code_id": {
+                      "type": "string",
+                      "example": "055960038F4C4FD38913C29CA6BF1072"
+                    },
+                    "qr_code_payload": {
+                      "type": "string",
+                      "example": "00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo62250521A5nyprE3ocnbnbhxwj11O6304EA9C"
+                    },
+                    "qr_code_pix_key": {
+                      "type": "string",
+                      "example": "7514dfb7-d01d-40d6-9175-f5f16dd00077"
+                    },
+                    "qr_code_amount_cents": {},
+                    "qr_code": {
+                      "type": "string",
+                      "example": "https://faturas.iugu.com/static_qr_code/055960038F4C4FD38913C29CA6BF1072"
+                    },
+                    "qr_code_description": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/static_qr_codes/{qr_code_id}": {
+      "get": {
+        "summary": "Consulta QRCode Estático",
+        "description": "Consulta de QRCode Estático",
+        "operationId": "consulta-qrcode-estático",
+        "parameters": [
+          {
+            "name": "qr_code_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"qr_code_id\": \"055960038F4C4FD38913C29CA6BF1072\",\n  \"qr_code_payload\": \"00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo62250521A5nyprE3ocnbnbhxwj11O6304EA9C\",\n  \"qr_code_pix_key\": \"7514dfb7-d01d-40d6-9175-f5f16dd00077\",\n  \"qr_code_amount_cents\": null,\n  \"qr_code\": \"https://faturas.iugu.com/static_qr_code/055960038F4C4FD38913C29CA6BF1072\",\n  \"qr_code_description\": null\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qr_code_id": {
+                      "type": "string",
+                      "example": "055960038F4C4FD38913C29CA6BF1072"
+                    },
+                    "qr_code_payload": {
+                      "type": "string",
+                      "example": "00020126580014br.gov.bcb.pix01367514dfb7-d01d-40d6-9175-f5f16dd000775204000053039865802BR5925IUGU INSTITUICAO DE PAGAM6009Sao Paulo62250521A5nyprE3ocnbnbhxwj11O6304EA9C"
+                    },
+                    "qr_code_pix_key": {
+                      "type": "string",
+                      "example": "7514dfb7-d01d-40d6-9175-f5f16dd00077"
+                    },
+                    "qr_code_amount_cents": {},
+                    "qr_code": {
+                      "type": "string",
+                      "example": "https://faturas.iugu.com/static_qr_code/055960038F4C4FD38913C29CA6BF1072"
+                    },
+                    "qr_code_description": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "x-readme": {
+    "headers": []
+  },
+  "x-readme-fauxas": true
+}
