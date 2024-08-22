@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "iugu-dev",
+      "source": "@iugu-dev/v1.0#4kuap2nlsc7rzjt",
+      "integrity": "sha512-sfXohv0Jf6VVmwzR28Gqp91g1Br1iwXSTSdtBY+u6XfHiWJxAZXurMRyEKKKY58QTSw/A23yXLvSJ069t8lTUQ==",
+      "installerVersion": "6.1.1"
+    }
+  ]
+}
